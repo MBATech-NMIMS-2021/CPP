@@ -1701,6 +1701,62 @@ int main(void){
 
 <hr>
 
+- If this functions gets called even before itd definition, like in the following case:
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+  printName("Sam Varghese");
+
+  return 0;
+}
+
+void printName(string name){
+
+  cout << name;
+}
+```
+
+<hr>
+
+- Then we get an error saying that the function `printName` was never defined.
+- Hence in order to overcome this error, we may declare the function early, as following:
+
+<hr>
+
+```cpp
+
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+void printName(string); // Just put the types as parameters
+
+int main(void){
+
+  printName("Sam Varghese");
+
+  return 0;
+}
+
+void printName(string name){
+
+  cout << name;
+}
+```
+
+<hr>
+
 ## Inline Functions
 
 <hr>
@@ -2290,6 +2346,221 @@ int main(void){
   class12.addFourty(class12.strength);
 
   cout << "Strength of the class+40: " << class12.strength;
+
+  return 0;
+}
+```
+
+<hr>
+
+# Access Specifiers
+
+<hr>
+
+- The `public` keyword that appears inside the class is an access specifier.
+- Access specifiers define how the members (attributes and methods) of a class can be accessed.
+- `public` means that they can be accessed and modified from outside the code
+
+<hr>
+
+- In C++ there are 3 types of access specifiers: 
+
+<hr>
+
+- `public`: Members are accessed from outside the class.
+- `private`: Members can't be accessed from outside the class.
+- `protected`: Members can't be accessed from outside the class, however they can be accessed in inherited classes.
+
+<hr>
+
+- Here's an example demonstrating the difference between `public` and `private` members.
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class myClass {
+
+    public:
+        string behaviour;
+
+    private:
+        string bestFriend;
+};
+
+int main(void){
+
+    myClass Sam;
+
+    Sam.behaviour = "Good";
+    Sam.bestFriend = "Tejas";
+
+    return 0;
+}
+```
+
+<hr>
+
+- **Note**: By default all the members of a class are `private` if you don't specify the access specifier.
+
+<hr>
+
+```cpp
+class MyClass {
+  int x;   // Private attribute
+  int y;   // Private attribute
+};
+```
+
+<hr>
+
+# Encapsulation
+
+<hr>
+
+- Encapsulation means to hide the sensitive data from users.
+- To access a private attribute, use the public `get` & `set` method.
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class MySchool{
+
+  public:
+    string studentName;
+    string studentBehavior;
+
+    // A function to get the value of private object
+
+    long getID(){
+
+      return ID;
+    }
+
+    // A function to change the value of a private object
+
+    void setID(long IDValue){
+
+      ID = IDValue;
+    }
+
+  private:
+    long ID;
+    int result;
+};
+
+int main(void){
+
+  MySchool Sam;
+
+  Sam.setID(1234);
+
+  cout << Sam.getID();
+
+  return 0;
+}
+```
+
+<hr>
+
+# Inheritance
+
+<hr>
+
+- In C++ it is possible to inherit attributes and methods from one class another.
+- This inheritance concept is categorized in 2 categories
+
+<hr>
+
+- **Derived Classes** (child): The class that inherits from another class
+- **Base Class**(parent): The class being inherited from
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+// Base Class
+
+class student {
+
+  public:
+    string name;
+
+    void printName(){
+
+      cout << "\nMy name is Sam";
+    }
+};
+
+// Derived class
+
+class class12: public student {
+
+  public:
+    int class12ID = 1221;
+};
+
+int main(void){
+
+  class12 Sam;
+  Sam.printName();
+
+  return 0;
+}
+```
+
+<hr>
+
+## Multilevel Inheritance
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class School {
+
+  public:
+    string schoolsRegion;
+};
+
+class SicaSchool : public School {
+
+  public:
+    string schoolName;
+};
+
+class classes : public SicaSchool {
+
+  public:
+    string className;
+};
+
+int main(void){
+
+  classes class12;
+  class12.schoolName = "SICA";
+
+  cout << class12.schoolName;
 
   return 0;
 }
