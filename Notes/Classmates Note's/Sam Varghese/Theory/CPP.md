@@ -2614,3 +2614,56 @@ int main(void){
 
 <hr>
 
+## Protected Access Specifier
+
+<hr>
+
+- `protected` is similar to `private`, but can also be accessed in the inherited class.
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+// Base class
+
+class country {
+
+    protected:
+        string countryName;
+};
+
+// Derived Class
+
+class state : public country {
+
+    public:
+        void setSalary(string nameCountry){
+
+            countryName = nameCountry;
+        };
+
+        void getSalary(){
+
+            cout << countryName;
+        };
+};
+
+int main(void){
+
+    state MadhyaPradesh;
+
+    MadhyaPradesh.setSalary("Madhya Pradesh");
+
+    MadhyaPradesh.getSalary();
+
+    return 0;
+}
+```
+
+<hr>
+
