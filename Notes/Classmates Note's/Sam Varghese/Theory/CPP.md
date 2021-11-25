@@ -2568,3 +2568,49 @@ int main(void){
 
 <hr>
 
+## Multilevel Inheritance
+
+<hr>
+
+- A class can also be derived from more than one base class, using comma separated list
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+// First base class
+
+class myCity{
+
+    string name;
+};
+
+// Second base class
+
+class mySchool{
+
+    string schoolName;
+};
+
+// Derived class
+
+class schoolInCity : public myCity, public mySchool {
+
+    int schoolNumber;
+};
+
+int main(void){
+
+    
+
+    return 0;
+}
+```
+
+<hr>
+
