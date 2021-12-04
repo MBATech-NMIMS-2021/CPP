@@ -55,7 +55,7 @@ int main(void){ // defining a function named main, with int return type. This fu
 
 <hr>
 
-```
+```cpp
 #include<iostream>
 
 using namespace std;
@@ -1135,6 +1135,36 @@ int main(void){
 
 <hr>
 
+- **Note** The elements field within square brackets [], representing the number of elements in the array, must be a constant expression, since arrays are blocks of static memory whose size must be determined at compile time, before the program runs.
+
+<hr>
+
+## Declaring Multi Dimensional Array
+
+<hr>
+
+- Multi dimensional arrays are the arrays who have arrays itself as their elements.
+- In order to declare multi-dimensional arrays, here is an example:
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int multiDimensionalArray[2][3] = {{1,2,3}, {4,5,6}}; // array[row count][column count]
+
+    return 0;
+}
+```
+
+<hr>
+
 ## Inserting Values
 
 <hr>
@@ -1239,6 +1269,14 @@ int main(void){
   integerArray[5] = 6;
 }
 ```
+
+<hr>
+
+# Pass Arrays As Parameters
+
+<hr>
+
+
 
 <hr>
 
@@ -1867,6 +1905,10 @@ int main(void){
 
 <hr>
 
+
+
+<hr>
+
 ## Pass By Reference
 
 <hr>
@@ -2065,6 +2107,88 @@ int main(void){
   return 0;
 }
 ```
+
+<hr>
+
+# Dynamic Allocation
+
+<hr>
+
+- C++ does not allows memory to be assigned according to the user input during runtime.
+- See the following program
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int arrayLength;
+
+    cout << "\nKindly enter the length of the array: ";
+    cin >> arrayLength;
+
+    int array[arrayLength]; // Memory allocation statement
+
+    return 0;
+}
+```
+
+<hr>
+
+- The above program might run on some latest compilers, but won't run in old compilers of C++
+- Because the allocation on memory that should be done during compile time gets done during run time.
+- Hence, here comes the concept of **Dynamic Allocation**
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+void printArray(int *array, int arrayLength){
+
+    cout << "\nPrinting the array: \n";
+
+    for (int i = 0; i < arrayLength; i++){
+
+        cout << *(array + i) << "\n";
+    };
+}
+
+int main(void){
+
+    int *array;
+
+    array = new int[5]; // new allocates memory. We need to specify the size inside []
+
+    *(array) = 0;
+    *(array + 1) = 1;
+    *(array + 2) = 2; // elements can be accessed either like array[index] or *(array + index)
+    *(array + 3) = 3;
+    *(array + 4) = 4;
+
+    printArray(array, 5);
+
+    return 0;
+}
+```
+
+<hr>
+
+- So in the dynamic allocation, we allocate a block of memory during the runtime using the `new` keyword followed by the size of the array.
+
+<hr>
+
+- In the above program we tell the compiler the memory that should be allocated to `array` only during the runtime, because it depends on the user input.
 
 <hr>
 
@@ -2667,3 +2791,6 @@ int main(void){
 
 <hr>
 
+## Polymorphism
+
+<hr>
