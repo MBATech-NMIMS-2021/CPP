@@ -187,7 +187,7 @@ int main(void){
 
 <hr>
 
-- Syntax: _type name = value;_, and this may also work: _type name;_
+- Syntax: `type name = value;` and this may also work: `type name;`
 
 <hr>
 
