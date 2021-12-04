@@ -205,6 +205,52 @@ int main(void){
 
 <hr>
 
+- Variables can also be declared in this syntax: `type variable_name(variable_value)`
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int x(0);
+
+    cout << x;
+
+    return 0;
+}
+```
+
+<hr>
+
+- And declaration is also possible in this way: `type variable_name {initial_value}`
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int x {0};
+
+    cout << x;
+
+    return 0;
+}
+```
+
+<hr>
+
 # Display Variables
 
 <hr>
@@ -596,10 +642,6 @@ int main(void){
 
 <hr>
 
-![Keep going gif](Images/keepGoing.gif)
-
-<hr>
-
 # Compilation Of All Data Types
 
 <hr>
@@ -627,6 +669,10 @@ int main(void){
 <tr><td>Void type</td><td><code><b>void</b></code></td><td>no storage</td></tr>
 <tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
 </table>
+
+<hr>
+
+![Keep going gif](Images/keepGoing.gif)
 
 <hr>
 
