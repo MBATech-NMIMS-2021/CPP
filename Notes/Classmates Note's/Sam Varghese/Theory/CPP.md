@@ -108,6 +108,15 @@ int main(void){
 
 <hr>
 
+## Endl Vs \n
+
+<hr>
+
+- Performance wise `\n` is considered as a better option because `endl` keeps flushing the queue in the output buffer throughout the process.
+- So try using `\n` until and unless flushing the queue in the output buffer is not a necessity.
+
+<hr>
+
 # Comments
 
 <hr>
