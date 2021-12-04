@@ -36,7 +36,7 @@
 
 ```cpp
 #include<iostream> // Library which has standard standard input output definitions
-
+                     // Blank lines have no effect on prog. They are put to improve readability
 int main(void){ // defining a function named main, with int return type. This function runs automatically without even calling
 
 // Void keyword simply means that we are passing nothing as an argument in this function
@@ -1272,7 +1272,7 @@ int main(void){
 
 <hr>
 
-# Pass Arrays As Parameters
+## Pass Arrays As Parameters
 
 <hr>
 
