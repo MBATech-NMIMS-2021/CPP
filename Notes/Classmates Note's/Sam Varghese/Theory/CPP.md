@@ -117,6 +117,10 @@ int main(void){
 
 <hr>
 
+- And wanna inform that in order to print a tab space (4 spaces), we can also use `\t`
+
+<hr>
+
 # Comments
 
 <hr>
