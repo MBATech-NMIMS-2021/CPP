@@ -51,6 +51,7 @@ int main(void){ // defining a function named main, with int return type. This fu
 
 <hr>
 
+- `cout` is a part of standard library, and all the elements in the standard library are declared within what's called a namespace : the namespace `std`.
 - Instead of writing `std::cout` always, we may also write the above code as follows:
 
 <hr>
@@ -260,7 +261,7 @@ int main(void){
 2. Names must begin only with a letter or an underscore.
 3. Identifiers are case sensitive. (So abc, and Abc are different identifiers)
 4. Names cannot contain whitespaces, or special characters like !, #, %, etc.
-5. Reserved words like `int` can't be used as identifiers.
+5. Reserved words like `int`, `float`, `long` can't be used as identifiers.
 
 <hr>
 
@@ -596,6 +597,36 @@ int main(void){
 <hr>
 
 ![Keep going gif](Images/keepGoing.gif)
+
+<hr>
+
+# Compilation Of All Data Types
+
+<hr>
+
+<table class="boxed">
+<tr><th>Group</th><th>Type names*</th><th>Notes on size / precision</th></tr>
+<tr><td rowspan="4">Character types</td><td><code><b>char</b></code></td><td>Exactly one byte in size. At least 8 bits.</td></tr>
+<tr><td><code><b>char16_t</b></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+<tr><td><code><b>char32_t</b></code></td><td>Not smaller than <code>char16_t</code>. At least 32 bits.</td></tr>
+<tr><td><code><b>wchar_t</b></code></td><td>Can represent the largest supported character set.</td></tr>
+<tr><td rowspan="5">Integer types (signed)</td><td><code><b>signed char</b></code></td><td>Same size as <code>char</code>. At least 8 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>short</b> <i>int</i></code></td><td>Not smaller than <code>char</code>. At least 16 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>int</b></code></td><td>Not smaller than <code>short</code>. At least 16 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>long</b> <i>int</i></code></td><td>Not smaller than <code>int</code>. At least 32 bits.</td></tr>
+<tr><td><code><i>signed</i> <b>long long</b> <i>int</i></code></td><td>Not smaller than <code>long</code>. At least 64 bits.</td></tr>
+<tr><td rowspan="5">Integer types (unsigned)</td><td><code><b>unsigned char</b></code></td><td rowspan="5">(same size as their signed counterparts)</td></tr>
+<tr><td><code><b>unsigned short</b> <i>int</i></code></td></tr>
+<tr><td><code><b>unsigned</b> <i>int</i></code></td></tr>
+<tr><td><code><b>unsigned long</b> <i>int</i></code></td></tr>
+<tr><td><code><b>unsigned long long</b> <i>int</i></code></td></tr>
+<tr><td rowspan="3">Floating-point types</td><td><code><b>float</b></code></td><td></td></tr>
+<tr><td><code><b>double</b></code></td><td>Precision not less than <code>float</code></td></tr>
+<tr><td><code><b>long double</b></code></td><td>Precision not less than <code>double</code></td></tr>
+<tr><td>Boolean type</td><td><code><b>bool</b></code></td><td></td></tr>
+<tr><td>Void type</td><td><code><b>void</b></code></td><td>no storage</td></tr>
+<tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
+</table>
 
 <hr>
 
