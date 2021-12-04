@@ -251,6 +251,63 @@ int main(void){
 
 <hr>
 
+# Type Auto Detection
+
+<hr>
+
+- If we don't know which type of value a variable's gonna inherit, then we can command C++ to detect the type automatically
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    auto a = "Sam"; // use auto instead of a fixed type
+
+    cout << a;
+
+    return 0;
+}
+```
+
+<hr>
+
+- Now suppose if we wanna declare a variable `b` which should be of the same type that of `a`, but we are not sure the type variable `a`'s gonna inherit.
+- Then we use `decltype` as used below:
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    auto a = "Sam";
+
+    cout << a;
+
+    decltype(a) b;
+
+    a = "Angel";
+
+    cout << "\n"<< a;
+
+    return 0;
+}
+```
+
+<hr>
+
 # Display Variables
 
 <hr>
