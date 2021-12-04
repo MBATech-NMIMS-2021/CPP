@@ -1276,7 +1276,36 @@ int main(void){
 
 <hr>
 
+- In order to pass arrays as parameters to a function, we write the parameter as follows:
 
+<hr>
+
+```cpp
+// Prog to print all elements of an array
+
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+void printArray(int array[], int arrayLength){ // Format: array_Element_type array_name []
+
+    for (int i = 0; i < arrayLength; i++){
+
+        cout << array[i] << "\n";
+    }
+}
+
+int main(void){
+
+    int array[3] = {1, 2, 3};
+
+    printArray(array, 3);
+
+    return 0;
+}
+```
 
 <hr>
 
