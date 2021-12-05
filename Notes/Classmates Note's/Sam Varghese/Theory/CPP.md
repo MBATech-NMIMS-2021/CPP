@@ -121,6 +121,54 @@ int main(void){
 
 <hr>
 
+# Raw Strings
+
+<hr>
+
+- Suppose if we wanna print following sentence: `I am printing \n, \a, \t, and all the rest escape characters`
+- Then one way to print this statement is to use `\\` in order to ignore a single slash followed by n, a, t to be considered as an escape sequence, as follows:
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    cout << "I am printing \\n, \\a, \\t, and all the rest escape characters";
+
+    return 0;
+}
+```
+
+<hr>
+
+- Instead of using `\\` all the time in order to ignore the escape sequences, we may use raw string feature that C++ offers
+- So we put the string that we wanna print in `R"(put_the_text_over_here)"`
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    cout << R"(I am printing \n, \a, \t, and all the rest escape characters)"; // Used the raw string feature
+
+    return 0;
+}
+```
+
+<hr>
+
 # Comments
 
 <hr>
