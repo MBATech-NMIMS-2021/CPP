@@ -753,6 +753,40 @@ int main(void){
 
 <hr>
 
+# Type Casting
+
+<hr>
+
+- Here's an example showing how to change the type of one variable to another
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int i;
+    float f = 3.14159;
+
+    i = (int)f; // Type Casting Statement
+
+    cout << "\nValue of f: " << f << " value of i = " << i;
+
+    return 0;
+}
+```
+
+<hr>
+
+- The type casting statements can also be written as `i = int(f)`
+
+<hr>
+
 # String Concatenation
 
 <hr>
