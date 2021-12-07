@@ -169,6 +169,10 @@ int main(void){
 
 <hr>
 
+- **Note**: All escape characters are CHARACTERS, not strings event though they have 2 chars
+
+<hr>
+
 # Comments
 
 <hr>
@@ -369,6 +373,34 @@ int main(void){
 
 <hr>
 
+# Constant Variables
+
+<hr>
+
+- In order to prevent the value of a declared variable get changed in the future, we use the `const` keyword
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    const int pi = 3.141;
+    // pi = 6; // results in error
+
+    cout << pi;
+
+    return 0;
+}
+```
+
+<hr>
+
 # Display Variables
 
 <hr>
@@ -412,7 +444,35 @@ int main(void){
 
 <hr>
 
-# Identifiers
+# Preprocessor Definitions
+
+<hr>
+
+- Another mechanism to name a constant value is to use preprocessor definitions
+- Syntax is `#define identifier replacement`
+- So after this definition, all the places where mentioned `identifier` appears, will get replaced by the replacement we've mentioned
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+#define Pi 3.14159 // preprocessor definitions
+
+using namespace std;
+
+int main(void){
+
+    cout << Pi * 3;
+
+    return 0;
+}
+```
+
+<hr>
+
+ # Identifiers
 
 <hr>
 
@@ -625,6 +685,71 @@ int main(void){
     std::cout << (5>6); // Ouput is 0
 }
 ```
+
+<hr>
+
+- **Note**: `%` gives remainder
+- **Note**: If division is done among 2 ints, then result will always be an int
+- **Note**: If any one of the 2 dividing nos is float, then result is float.
+- **Note**: `i++` in C++ means `i = i + 1` which is also equivalent to writing `i += 1` which is again equivalent to `++i`
+
+<hr>
+
+# i++ vs ++i
+
+<hr>
+
+- Though both the expressions do the exactly similar thing, still there's a very imp difference between them
+- `i++` adds later, while `++i` firstly adds, then returns the final value.
+- Difference can be better understood with the following ex
+
+<hr>
+
+```c++
+x = 3;
+y = ++x;
+// x contains 4, y contains 4
+```
+
+<hr>
+
+```c++
+x = 3;
+y = x++;
+// x contains 4, y contains 3
+```
+
+<hr>
+
+# Comma Operator
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int a = 5;
+
+    int b = (a = 6, ++a); // Will explain this expression
+
+    cout << b;
+
+    return 0;
+}
+```
+
+<hr>
+
+- In the above expression, firstly the things inside bracket get executed
+- So firstly a becomes 6
+- Now a gets incremented by 1
+- Now in the end, b get the value of a
 
 <hr>
 
