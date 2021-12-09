@@ -114,6 +114,8 @@ int main(void){
 
 - Performance wise `\n` is considered as a better option because `endl` keeps flushing the queue in the output buffer throughout the process.
 - So try using `\n` until and unless flushing the queue in the output buffer is not a necessity.
+- The endl manipulator produces a newline character, exactly as the insertion of '\n' does; but it also has an additional behavior: the stream's buffer (if any) is flushed, which means that the output is requested to be physically written to the device, if it wasn't already. This affects mainly fully buffered streams, and cout is (generally) not a fully buffered stream. Still, it is generally a good idea to use endl only when flushing the stream would be a feature and '\n' when it would not. Bear in mind that a flushing operation incurs a certain overhead, and on some devices it may produce a delay.
+
 
 <hr>
 
@@ -946,6 +948,36 @@ int main(void){
 <tr><td>Void type</td><td><code><b>void</b></code></td><td>no storage</td></tr>
 <tr><td>Null pointer</td><td><code><b>decltype(nullptr)</b></code></td><td></td></tr>
 </table>
+
+<hr>
+
+# Sizeof
+
+<hr>
+
+- The `sizeof()` function takes wither a type, or a variable as argument, and then returns the size in bytes of the object.
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int i;
+    float f = 3.14159;
+
+    i = (int)f;
+
+    cout << sizeof(i) << " " << sizeof(f);
+
+    return 0;
+}
+```
 
 <hr>
 
@@ -2568,10 +2600,162 @@ int main(void){
 <hr>
 
 - So in the dynamic allocation, we allocate a block of memory during the runtime using the `new` keyword followed by the size of the array.
+- Now that we've allocates some block of memory, hence it's our duty to dispose/ free that memory if the variable is no longer required.
+- Hence to dispose the memory, we simply do `delete pointer` or `delete[] pointer`
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+void printArray(int *array, int arrayLength){
+
+    cout << "\nPrinting the array: \n";
+
+    for (int i = 0; i < arrayLength; i++){
+
+        cout << *(array + i) << "\n";
+    };
+}
+
+int main(void){
+
+    int *array;
+
+    array = new int[5]; // new allocates memory. We need to specify the size inside []
+
+    *(array) = 0;
+    *(array + 1) = 1;
+    *(array + 2) = 2; // elements can be accessed either like array[index] or *(array + index)
+    *(array + 3) = 3;
+    *(array + 4) = 4;
+
+    printArray(array, 5);
+
+    delete[] array;
+
+    cout << "\nArray deleted successfully from the memory";
+
+    return 0;
+}
+```
 
 <hr>
 
 - In the above program we tell the compiler the memory that should be allocated to `array` only during the runtime, because it depends on the user input.
+
+<hr>
+
+# Data Structures
+
+<hr>
+
+- It's a group of data elements grouped together under one name.
+- Data elements are called **members**
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    struct schools{
+
+        string schoolName;
+        int noStudents;
+        string principalName;
+    };
+
+    schools Sica;
+
+    return 0;
+}
+```
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    struct schools{
+
+        string schoolName;
+        int noStudents;
+        string principalName;
+    } Sica;
+
+    return 0;
+}
+```
+
+<hr>
+
+## Create Array Of Structs
+
+<hr>
+
+- Here is a way to create array of structs
+
+<hr>
+
+```c++
+// Program which outputs schools whose school code is < 50 by storing records of all schools (struct) in an array
+
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    struct schools {
+
+        string schoolName;
+        int schoolCode;
+        string principalName;
+    };
+
+    schools indoreSchools[3];
+
+    for (int i = 0; i < 3; i++){
+
+        cout << "\nKindly enter the name of the school: ";
+        cin >> indoreSchools[i].schoolName;
+
+        cout << "\nEnter the school code: ";
+        cin >> indoreSchools[i].schoolCode;
+
+        cout << "\nEnter the principal name: ";
+        cin >> indoreSchools[i].principalName;
+    };
+
+    for (int i = 0; i < 3; i++){
+
+        if(indoreSchools[i].schoolCode < 50){
+
+            cout << "\nSchool " << indoreSchools[i].schoolName << " has a scholl code " << indoreSchools[i].schoolCode;
+        }
+    }
+
+        return 0;
+}
+```
 
 <hr>
 
