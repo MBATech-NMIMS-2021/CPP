@@ -601,6 +601,80 @@ int main(void){
 
 <hr>
 
+# Namespaces
+
+<hr>
+
+- Variables are of two kinds: `global` and `local`
+- `global` variables are those which can be accessed from anywhere. (Even from outside the block)
+- `local` variables are those which can be accessed only from inside the block.
+- Here's an example of a local variable named `localVariables` and a global variable named `globalVariable`
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int globalVariable = 200;
+
+    {
+        int localVariable = 100;
+        cout << "\nThis is a local variable inside the block: " << localVariable;
+        cout << "\nThis is a global variable inside the block: " << globalVariable;
+    }
+
+    cout << "\nThis is the global variable outside the block: " << globalVariable;
+    // cout << "\nThis is the local variable outside the block: " << localVariable; // This line will produce an error as localVariable wasn't declared in this scope
+
+    return 0;
+}
+```
+
+<hr>
+
+- **Note**: Global variables are altered permanently if they get from even inside the block.
+- Here's an example where we change the value of `globalVariable` from inside the block:
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    int globalVariable;
+
+    globalVariable = 100;
+
+    cout << "\nOutside the block, and before the block code: "<< globalVariable;
+
+    {
+
+        cout << "Altering the value of globalVariable to 50...";
+
+        globalVariable = 50;
+
+        cout << "\nInside the block: " << globalVariable;
+    };
+
+    cout << "\nOutside the block and after the block code: " << globalVariable;
+
+    return 0;
+}
+```
+
+<hr>
+
 # C++ Booleans
 
 <hr>
@@ -2800,6 +2874,10 @@ int main(void){
 
 <hr>
 
+- Classes are an expanded concept of data structures: like data structures, they may contain data members, but they can also contain functions as members.
+
+<hr>
+
 ```cpp
 #include<iostream>
 #include<vector>
@@ -2817,7 +2895,7 @@ class Student {
 
 int main(void){
 
-  Student Sam;
+  Student Sam; // Here Sam is an object, which is basically an instantiation of a class
 
   Sam.name = "Sam Varghese";
   Sam.className = "Class 12";
@@ -3058,7 +3136,7 @@ int main(void){
 
 <hr>
 
-- `public`: Members are accessed from outside the class.
+- `public`: Members are accessed from anywhere where the object is visible.
 - `private`: Members can't be accessed from outside the class.
 - `protected`: Members can't be accessed from outside the class, however they can be accessed in inherited classes.
 
