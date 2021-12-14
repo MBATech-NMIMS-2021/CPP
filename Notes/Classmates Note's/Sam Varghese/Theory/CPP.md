@@ -710,6 +710,10 @@ int main(void){
 
 <hr>
 
+**Note**: Comparison operators always return 1(true) and 0(false) as output.
+
+<hr>
+
 # C++ Chars
 
 <hr>
@@ -784,7 +788,14 @@ int main(void){
 
 <hr>
 
-**Note**: Comparison operators always return 1(true) and 0(false) as output.
+## Cases where you might prefer char* over std:string
+
+<hr>
+
+- When dealing with lower level access like talking to the OS, but usually, if you’re passing the string to the
+OS then std::string::c_str has it covered.
+- Compatibility with old C code (although std::string’s c_str() method handles most of this).
+- To conserve memory (std::string will likely have more overhead).
 
 <hr>
 
