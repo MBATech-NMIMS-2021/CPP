@@ -71,6 +71,20 @@ int main(void){
 
 <hr>
 
+# Namespaces
+
+<hr>
+
+## Requirement Of Namespaces
+
+<hr>
+
+- Only one entity can exist with a particular name in a particular scope.
+- But non-local variables bring more collision especially considering that libraries may declare many functions, types, and variables, neither of them local in nature.
+- So, namespaces allow us to group named entities that otherwise would have global scopes.
+
+<hr>
+
 # New Line
 
 <hr>
@@ -115,7 +129,6 @@ int main(void){
 - Performance wise `\n` is considered as a better option because `endl` keeps flushing the queue in the output buffer throughout the process.
 - So try using `\n` until and unless flushing the queue in the output buffer is not a necessity.
 - The endl manipulator produces a newline character, exactly as the insertion of '\n' does; but it also has an additional behavior: the stream's buffer (if any) is flushed, which means that the output is requested to be physically written to the device, if it wasn't already. This affects mainly fully buffered streams, and cout is (generally) not a fully buffered stream. Still, it is generally a good idea to use endl only when flushing the stream would be a feature and '\n' when it would not. Bear in mind that a flushing operation incurs a certain overhead, and on some devices it may produce a delay.
-
 
 <hr>
 
@@ -474,7 +487,7 @@ int main(void){
 
 <hr>
 
- # Identifiers
+# Identifiers
 
 <hr>
 
@@ -674,7 +687,6 @@ int main(void){
 ```
 
 <hr>
-
 # C++ Booleans
 
 <hr>
@@ -744,6 +756,29 @@ int main(void){
 
     std::string stringA = "Sam Varghese";
     std::cout << "Value of stringA: "<<stringA;
+}
+```
+
+<hr>
+
+- Strings can also be created through the following way: `const char* stringName = "string";` instead of using the string library
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    const char *string = "Myself Sam";
+
+    cout << string;
+
+    return 0;
 }
 ```
 
@@ -2148,7 +2183,7 @@ int main(void){
 
 <hr>
 
-- In the previous example, we used the pointer variable to get the memory address of a variable (used together with the & reference operator)- However, you can also use the pointer to get the value of the variable, by using the * operator (the dereference operator)
+- In the previous example, we used the pointer variable to get the memory address of a variable (used together with the & reference operator)- However, you can also use the pointer to get the value of the variable, by using the \* operator (the dereference operator)
 
 <hr>
 
@@ -2290,7 +2325,7 @@ void printName(string name){
 
 - There is too much overhead while switching from executing the main code, to executing the **SMALL** piece of code in the function.
 - Hence, in order to optimize the program, we have the concept of `inline` functions.
-- Inline functions simply copy paste the contents of function to the main function,  instead of redirecting the program execution to the code inside function.
+- Inline functions simply copy paste the contents of function to the main function, instead of redirecting the program execution to the code inside function.
 
 <hr>
 
@@ -2394,8 +2429,6 @@ int main(void){
 
 <hr>
 
-
-
 <hr>
 
 ## Pass By Reference
@@ -2484,7 +2517,7 @@ int main(void){
 
 <hr>
 
-- **Note**: Arrays when passed  
+- **Note**: Arrays when passed
 
 <hr>
 
@@ -2917,6 +2950,10 @@ int main(void){
 
 <hr>
 
+    Search keyword: functions in classes
+
+<hr>
+
 ```cpp
 #include<iostream>
 #include<vector>
@@ -3132,7 +3169,7 @@ int main(void){
 
 <hr>
 
-- In C++ there are 3 types of access specifiers: 
+- In C++ there are 3 types of access specifiers:
 
 <hr>
 
@@ -3185,6 +3222,149 @@ class MyClass {
   int y;   // Private attribute
 };
 ```
+
+<hr>
+
+## Copy Constructor
+
+<hr>
+
+- This concept is used when we want to construct an object based on another object of the same class.
+- Syntax: `ClassName (const ClassName &old_obj);`
+- Following is an example where we try to create an object `arnold` with the help of an old already created object named
+`sica`
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class schools{
+
+    public:
+        string schoolName;
+        int schoolCode;
+        schools(string schoolNameInput, int schoolCodeInput){
+
+            schoolName = schoolNameInput;
+            schoolCode = schoolCodeInput;
+        };
+        schools(const schools &oldObject){
+
+            schoolName = oldObject.schoolName;
+            schoolCode = oldObject.schoolCode + 50;
+        }
+};
+
+int main(void){
+
+    schools sica("SICA School", 543);// Normal constructor
+    cout << "\nSchool name: " << sica.schoolName << " code = " << sica.schoolCode;
+
+    schools arnold(sica);// Copy constructor
+    cout << "\nSchool name: " << arnold.schoolName << " code = " << arnold.schoolCode;
+
+    return 0;
+}
+```
+
+<hr>
+
+- **Note**
+- Lets ponder about what happens when I do something like this `className object1 = object2`
+- So, C++ interprets the above line as an act of copying `object2` into `object1`.
+- So here things go as per out copy function. Take the following example where we try to write the above statements with `sica` and `arnold` as `object1` and `object2` to see what happens
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class schools{
+
+    public:
+        string schoolName;
+        int schoolCode;
+        schools(string schoolNameInput, int schoolCodeInput){
+
+            schoolName = schoolNameInput;
+            schoolCode = schoolCodeInput;
+        };
+        schools(const schools &oldObject){
+
+            schoolName = oldObject.schoolName;
+            schoolCode = oldObject.schoolCode + 50;
+        }
+};
+
+int main(void){
+
+    schools sica("SICA School", 543);// Normal constructor
+    cout << "\nSchool name: " << sica.schoolName << " code = " << sica.schoolCode;
+
+    schools arnold = sica;// Copy constructor
+    cout << "\nSchool name: " << arnold.schoolName << " code = " << arnold.schoolCode;
+
+    return 0;
+}
+```
+
+<hr>
+
+- So after executing the above program what we notice is that the `schoolCode` for `arnold` is really 50 + `sica.schoolCode` which proofs that the copy function was called automatically through our statement.
+- Now lets discuss the case when there's no copy function written by us
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class schools{
+
+    public:
+        string schoolName;
+        int schoolCode;
+        schools(string schoolNameInput, int schoolCodeInput){
+
+            schoolName = schoolNameInput;
+            schoolCode = schoolCodeInput;
+        };
+        // schools(const schools &oldObject){ // I commented the copy function
+
+        //     schoolName = oldObject.schoolName;
+        //     schoolCode = oldObject.schoolCode + 50;
+        // }
+};
+
+int main(void){
+
+    schools sica("SICA School", 543);// Normal constructor
+    cout << "\nSchool name: " << sica.schoolName << " code = " << sica.schoolCode;
+
+    schools arnold = sica;// Copy constructor
+    cout << "\nSchool name: " << arnold.schoolName << " code = " << arnold.schoolCode;
+
+    return 0;
+}
+```
+
+<hr>
+
+- Output is quite interesting because `member-wise copying` has been done between objects.
+- This means that the all members of the object `sica` got copied directly to the new object `arnold`
+- Conclusion: If we don't write a copy function, and execute the following statement `className object1 = object2` then C++ makes its own copy function which does member-wise copying.
 
 <hr>
 
@@ -3375,7 +3555,7 @@ class schoolInCity : public myCity, public mySchool {
 
 int main(void){
 
-    
+
 
     return 0;
 }
