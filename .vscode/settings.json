@@ -1,3 +1,6 @@
 {
-  "cSpell.ignoreWords": ["ackermanns"]
+  "cSpell.ignoreWords": ["ackermanns"],
+  "files.associations": {
+    "xstring": "cpp"
+  }
 }

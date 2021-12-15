@@ -804,7 +804,7 @@ OS then std::string::c_str has it covered.
 
 int main(void){
 
-    std::cout << (5>6); // Ouput is 0
+    std::cout << (5>6); // Output is 0
 }
 ```
 
@@ -3376,6 +3376,65 @@ int main(void){
 - Output is quite interesting because `member-wise copying` has been done between objects.
 - This means that the all members of the object `sica` got copied directly to the new object `arnold`
 - Conclusion: If we don't write a copy function, and execute the following statement `className object1 = object2` then C++ makes its own copy function which does member-wise copying.
+
+<hr>
+
+# Operator Overloading
+
+<hr>
+
+- Operator overloading is used in order to use the operators for different classes for different uses.
+- Ex: `+` operator is used in order to add only `int`'s and `float`s.
+- But if we want `+` to add different complex numbers (class made by the programmer) too, so we would need to expand the features of the `+` operator which is done only through operator overloading.
+- Syntax: `<className> operator <operatorSign>(<className> const &<objectName>)` (Ignore arguments if you don't want them)
+- Here is a prog which extends the functionality of the `+` operator to be able to add 2 complex numbers.
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+class complex{
+
+    public:
+
+        int x, y;
+
+        complex(int i, int j){
+
+            this -> x = i;
+            this -> y = j;
+        };
+
+        // Performing operator overloading
+
+        complex operator +(complex const &object){
+
+            complex result(0,0);
+
+            result.x = x + object.x;
+            result.y = x + object.y;
+
+            return result;
+        };
+};
+
+int main(void){
+
+    complex number1(5,5);
+    complex number2(6,6);
+
+    complex number3 = number1 + number2;
+
+    cout << number3.x<<"   "<< number3.y;
+
+    return 0;
+}
+```
 
 <hr>
 

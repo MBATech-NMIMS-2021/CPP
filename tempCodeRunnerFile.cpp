@@ -1,21 +1,6 @@
-#include<iostream>
-#include<vector>
-#include<string>
 
-using namespace std;
+        // complex(int i, int j){
 
-
-void print(char a = 'a', int b = 10){
-
-    for(int i = 0; i<b; i++){
-
-        cout << a;
-    }
-};
-
-int main(void){
-
-    print(20);
-
-    return 0;
-}
+        //     this -> x = i;
+        //     this -> y = j;
+        // };
