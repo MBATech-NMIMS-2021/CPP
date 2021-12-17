@@ -2117,6 +2117,40 @@ int main(void){
 <hr>
 
 - Vectors are almost the same as arrays, but have an extra feature of resizing itself automatically when an element is added or deleted.
+- Syntax for declaring a vector `vector<elementType> vectorName;`
+- Here's a program which creates a vector, and prints out its elements
+
+<hr>
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+void printVector(vector<int> inputArray){
+
+    for (int i = 0; i< inputArray.size(); i++){
+
+        cout << "\nElement: " << inputArray[i];
+    };
+}
+
+int main(void){
+
+    vector<int> myVector;
+
+    for (int i = 1; i < 10; i++){
+
+        myVector.push_back(i);
+    };
+
+    printVector(myVector);
+
+    return 0;
+}
+```
 
 <hr>
 
