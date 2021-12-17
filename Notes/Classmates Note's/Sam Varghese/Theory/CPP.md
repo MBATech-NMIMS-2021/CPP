@@ -122,6 +122,54 @@ int main(void){
 
 <hr>
 
+# Setw Manipulator
+
+<hr>
+
+- By default when we print a string or an int in C++, the the output is only as wide as the width of the item to be printed.
+- Ex: Printing `Sam` in output will occupy only 3 spaces.
+- But suppose if we wanna print a table as I tried in the following program
+
+<hr>
+
+```c++
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main(void){
+
+    cout << "Name" << "\t"<<"Class" <<endl<< "Sam"<< "\t"<<10;
+
+    return 0;
+}
+```
+
+<hr>
+
+- But unfortunately the format in which the above program prints the table is not very visually clear as attractive.
+- Hence we use `setw` operator which can add more than the required spaces, and align the content to the right.
+- Here's a program which prints the same table using `setw` operator
+
+<hr>
+
+```c++
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main(void){
+
+    cout << "Name" << setw(8) << "Class" <<endl<< "Sam"<< setw(8)<< 100;
+
+    return 0;
+}
+```
+
+<hr>
+
 ## Endl Vs \n
 
 <hr>
@@ -147,7 +195,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -169,7 +216,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -291,7 +337,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -314,7 +359,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -341,7 +385,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -365,7 +408,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -398,7 +440,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -471,7 +512,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 #define Pi 3.14159 // preprocessor definitions
 
@@ -627,7 +667,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -658,7 +697,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -687,6 +725,7 @@ int main(void){
 ```
 
 <hr>
+
 # C++ Booleans
 
 <hr>
@@ -771,7 +810,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -849,7 +887,6 @@ y = x++;
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -885,7 +922,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -1071,6 +1107,11 @@ int main(void){
 
 <hr>
 
+- **Note**: By eliminating the sign of the character in integer types, you can change their range to start at 0, and include only positive numbers.
+- This allows them to represent numbers twice as big as the signed type.
+
+<hr>
+
 # Sizeof
 
 <hr>
@@ -1081,7 +1122,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -1656,7 +1696,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -1790,7 +1829,6 @@ int main(void){
 // Prog to print all elements of an array
 
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -1934,7 +1972,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 #include<cstring>
 
@@ -2025,7 +2062,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 #include<cstring>
 
@@ -2056,7 +2092,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 #include<cstring>
 
@@ -2077,6 +2112,14 @@ int main(void){
 
 <hr>
 
+# Vectors
+
+<hr>
+
+- Vectors are almost the same as arrays, but have an extra feature of resizing itself automatically when an element is added or deleted.
+
+<hr>
+
 # C++ References
 
 <hr>
@@ -2087,7 +2130,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2114,7 +2156,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2144,7 +2185,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2171,7 +2211,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2200,7 +2239,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2229,7 +2267,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2280,7 +2317,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2308,7 +2344,6 @@ void printName(string name){
 ```cpp
 
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2342,7 +2377,6 @@ void printName(string name){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2377,7 +2411,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2416,7 +2449,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2452,7 +2484,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2495,7 +2526,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2543,7 +2573,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2575,7 +2604,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2615,7 +2643,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2654,7 +2681,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2682,7 +2708,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2725,7 +2750,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2779,7 +2803,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2803,7 +2826,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2835,7 +2857,6 @@ int main(void){
 // Program which outputs schools whose school code is < 50 by storing records of all schools (struct) in an array
 
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2924,7 +2945,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -2967,7 +2987,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3007,7 +3026,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3060,7 +3078,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3090,7 +3107,6 @@ int main() {
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3132,7 +3148,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3196,7 +3211,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3249,7 +3263,6 @@ class MyClass {
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3294,7 +3307,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3337,7 +3349,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3393,7 +3404,6 @@ int main(void){
 
 ```c++
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3449,7 +3459,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3551,7 +3560,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3597,7 +3605,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
@@ -3643,7 +3650,6 @@ int main(void){
 
 ```cpp
 #include<iostream>
-#include<vector>
 #include<string>
 
 using namespace std;
