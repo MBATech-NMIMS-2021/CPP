@@ -2143,10 +2143,40 @@ int main(void){
 
     for (int i = 1; i < 10; i++){
 
-        myVector.push_back(i);
+        myVector.push_back(i); // push_back simply appends the element into myVector
     };
 
     printVector(myVector);
+
+    return 0;
+}
+```
+
+<hr>
+
+## Appending into a vector
+
+<hr>
+
+- As shown in the above code, we can append an element into the vector using `push_back(element)` function.
+- Here's a snippet that simply appends an element to a vector
+
+<hr>
+
+```c++
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main(void){
+
+    vector<int> myVector;
+
+    myVector.push_back(1);
+
+    cout << myVector[0];
 
     return 0;
 }
