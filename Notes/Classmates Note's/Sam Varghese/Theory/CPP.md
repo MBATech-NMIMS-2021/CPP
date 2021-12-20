@@ -1116,7 +1116,7 @@ int main(void){
 
 <hr>
 
-- The `sizeof()` function takes wither a type, or a variable as argument, and then returns the size in bytes of the object.
+- The `sizeof()` function takes wether a type, or a variable as argument, and then returns the size in bytes of the object.
 
 <hr>
 
@@ -1413,7 +1413,7 @@ int main(void){
 
 <hr>
 
-- Syntax: _variable = (condition) ? expressionTrue : expressionFalse;_
+- Syntax: `variable = (condition) ? expressionTrue : expressionFalse;`
 
 <hr>
 
