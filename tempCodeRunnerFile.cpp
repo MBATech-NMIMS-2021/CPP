@@ -1,6 +1,14 @@
+#include<iostream>
+#include<vector>
+#include<string>
 
-        // complex(int i, int j){
+using namespace std;
 
-        //     this -> x = i;
-        //     this -> y = j;
-        // };
+int main(void){
+
+    int x;
+
+    cout << x;
+
+    return 0;
+}
