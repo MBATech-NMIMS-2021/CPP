@@ -4,13 +4,12 @@
 
 #include<iostream>
 #include<vector>
-#include<string>
 
 using namespace std;
 
 int main(void){
 
-    string englishAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char* englishAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     unsigned int noTerms;
 

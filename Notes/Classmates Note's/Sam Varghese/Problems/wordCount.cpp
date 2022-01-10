@@ -1,8 +1,8 @@
-#include<iostream>
-#include<string>
-#include<cstring>
+#include <iostream>
+#include <cstring>
 
-int main(void){
+int main(void)
+{
 
     char sentence[] = "My   name is Sam Varghese from          NMIMS";
 
@@ -12,17 +12,22 @@ int main(void){
 
     int stringLength = strlen(sentence);
 
-    while(i<stringLength){
+    while (i < stringLength)
+    {
 
-        if(sentence[i] == ' '){
+        if (sentence[i] == ' ')
+        {
 
             wordCount++;
-            
-            while(sentence[i+1] == ' '){
+
+            while (sentence[i + 1] == ' ')
+            {
 
                 i++;
             }
-        } else {
+        }
+        else
+        {
 
             charCount++;
         }

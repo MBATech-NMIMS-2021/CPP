@@ -860,6 +860,10 @@ int main(void){
 <hr>
 
 - Though both the expressions do the exactly similar thing, still there's a very imp difference between them
+- Firstly, `i++` is called post increment
+- `++i` is called pre increment
+- Post increment increments later, uses first.
+- Pre increment increments first, and then uses it.
 - `i++` adds later, while `++i` firstly adds, then returns the final value.
 - Difference can be better understood with the following ex
 
