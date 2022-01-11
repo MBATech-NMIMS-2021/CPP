@@ -3769,6 +3769,65 @@ int main(void)
 
 <hr>
 
+## Executing base class method in child class
+
+<hr>
+
+- If you made a function in the parent class, and wanna use it in the child class, then here's an example explaining how to do it
+- In this example I execute `makeVehicles` function inside the base class `hyundai`
+
+<hr>
+
+```c++
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+// Making a parent class vehicles
+
+class vehicles{
+
+    protected:
+        string vehicleType;
+        string vehicleUse;
+        string vehicleFuelType;
+    public:
+        void makeVehicle(string vehicleTypeInput, string vehicleUseInput, string vehicleFuelTypeInput){
+
+            vehicleType = vehicleTypeInput;
+            vehicleUse = vehicleUseInput;
+            vehicleFuelType = vehicleFuelTypeInput;
+        }
+};
+
+// Making a child class hyundai
+
+class hyundai: public vehicles{
+
+    protected:
+        string modelName;
+        unsigned int modelNumber;
+    public:
+        void makeHyundaiCar(string vehicleTypeInput, string vehicleUseInput, string vehicleFuelTypeInput, string modelNameInput, unsigned int modeNumberInput)
+        {
+            // Firstly execute makeVehicle function of vehicles class
+            vehicles::makeVehicle(vehicleTypeInput, vehicleUseInput, vehicleFuelTypeInput);
+            modelName = modelNameInput;
+            modelNumber = modeNumberInput;
+        }
+};
+
+int main(void){
+
+    
+
+    return 0;
+}
+```
+
+<hr>
+
 ## Protected Access Specifier
 
 <hr>
