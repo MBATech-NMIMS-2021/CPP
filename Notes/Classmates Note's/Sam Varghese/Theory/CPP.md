@@ -3465,7 +3465,7 @@ int main(void){
 - Operator overloading is used in order to use the operators for different classes for different uses.
 - Ex: `+` operator is used in order to add only `int`'s and `float`s.
 - But if we want `+` to add different complex numbers (class made by the programmer) too, so we would need to expand the features of the `+` operator which is done only through operator overloading.
-- Syntax: `<className> operator <operatorSign>(<className> const &<objectName>)` (Ignore arguments if you don't want them)
+- Syntax: `<return type> operator <operatorSign>(<className> const &<objectName>)` (Ignore arguments if you don't want them)
 - Here is a prog which extends the functionality of the `+` operator to be able to add 2 complex numbers.
 
 <hr>
@@ -3883,3 +3883,8 @@ int main(void){
 ## Polymorphism
 
 <hr>
+
+## Destructor
+
+- It's a function that is automatically invoked whenever an object is going to be destroyed.
+- 
