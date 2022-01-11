@@ -3,5 +3,6 @@
   "files.associations": {
     "xstring": "cpp",
     "iostream": "cpp"
-  }
+  },
+  "discord.enabled": false
 }

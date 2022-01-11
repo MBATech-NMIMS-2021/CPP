@@ -3708,6 +3708,67 @@ int main(void){
 
 <hr>
 
+## Calling parent class constructor in child class
+
+<hr>
+
+- Check out the following program in order to figure out how to call a parent class constructor in a child class
+- In this prog, I am making a parent class `vehicles`, and it's child class `hyundai`.
+- `hyundai` will be calling the `vehicle` constructor.
+
+<hr>
+
+```c++
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Making parent class
+
+class vehicles
+{
+protected:
+    string type;
+    string use;
+    string usageLocation;
+
+public:
+    vehicles(string typeInput, string useInput, string usageLocationInput)
+    {
+        type = typeInput;
+        use = useInput;
+        usageLocation = usageLocationInput;
+    }
+};
+
+// Making a derived class
+
+class hyundai : public vehicles
+{
+protected:
+    string modelName;
+    unsigned int modelNumber;
+
+public:
+    // Calling the parent class constructor as well
+    hyundai(string typeInput, string useInput, string usageLocationInput, string modelNameInput, unsigned int modelNumberInput) : vehicles(typeInput, useInput, usageLocationInput)
+    {
+        modelName = modelNameInput;
+        modelNumber = modelNumberInput;
+    }
+};
+
+int main(void)
+{
+
+    return 0;
+}
+```
+
+<hr>
+
 ## Protected Access Specifier
 
 <hr>
