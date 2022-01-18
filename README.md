@@ -10,3 +10,7 @@
 - Feel free to create a PR if you wanna edit any part of this repository.
 
 <hr>
+
+[Sam's notes](https://github.com/MBATech-NMIMS-2021/CPP/blob/main/Notes/Classmates%20Note's/Sam%20Varghese/Theory/CPP.md)
+[Sam's solutions](https://github.com/MBATech-NMIMS-2021/CPP/tree/main/Notes/Classmates%20Note's/Sam%20Varghese/Problems)
+[Worksheets](https://github.com/MBATech-NMIMS-2021/CPP/tree/main/Worksheets)
